@@ -1,0 +1,4 @@
+<launch>
+  <param name="use_sim_time" value="true"/>
+  <node name="sim" pkg="stage_ros" type="stageros" args="./worlds/cave.world"/>
+</launch>
