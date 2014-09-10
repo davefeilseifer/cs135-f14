@@ -3,10 +3,14 @@
 #include <geometry_msgs/Twist.h>
 
 double front_dist;
+double left_dist;
+double right_dist;
 
 void laserCallback(const sensor_msgs::LaserScan::ConstPtr& msg)
 {
-  front_dist = DBL_MAX;
+  front_dist = 99999999999999999;
+
+
   for( int i = 0; i < msg->ranges.size(); i++ )
   {
     float angle = msg->angle_min + i*msg->angle_increment;
@@ -30,6 +34,7 @@ int main( int argc, char* argv[] )
   ros::Publisher cmd_vel = nh.advertise<geometry_msgs::Twist>("/cmd_vel",1000);
   geometry_msgs::Twist cmd_vel_msg;
   double des_vel = 1.0;
+
 
   while( ros::ok() )
   {
