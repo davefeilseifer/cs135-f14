@@ -1,0 +1,7 @@
+#!/bin/bash
+
+ROS_DISTRO=hydro
+
+source /opt/ros/$ROS_DISTRO/setup.bash
+export ROS_PACKAGE_PATH=`pwd`:$ROS_PACKAGE_PATH
+/opt/ros/$ROS_DISTRO/bin/roslaunch start_simulator.launch
