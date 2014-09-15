@@ -78,6 +78,8 @@ int main( int argc, char* argv[] )
 			// if there is an obstacle close to the front
 				// slow down
 				// turn to avoid the obstacle			
+			// else
+				// full speed ahead
 
 		/***************************************/
 
