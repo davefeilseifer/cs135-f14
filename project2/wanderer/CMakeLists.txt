@@ -101,7 +101,7 @@ include_directories(
 # )
 
 ## Declare a cpp executable
-add_executable(wanderer_node wanderer.cc)
+add_executable(wanderer_node wanderer.cpp)
 
 
 ## Add cmake target dependencies of the executable/library
