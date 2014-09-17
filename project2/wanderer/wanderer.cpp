@@ -71,15 +71,20 @@ int main( int argc, char* argv[] )
 		
 		// by default, the robot will not turn at all
 		double rvel = 0;
+		printf( "front_dist: %0.2f left_dist: %0.2f right_dist: %0.2f\n", front_dist, left_dist, right_dist );
 
 			//place your code here
 		/***************************************/
 
-			// if there is an obstacle close to the front
-				// slow down
-				// turn to avoid the obstacle			
-			// else
-				// full speed ahead
+			// if an obstacle is to the front of the robot
+				// the robot should slow down.
+
+			// If the robot has an obstacle closer to the left of the robot
+				// the robot should turn right.
+
+			// If the robot detects an obstacle closer to the right of the robot
+				// the robot should turn left.
+
 
 		/***************************************/
 
