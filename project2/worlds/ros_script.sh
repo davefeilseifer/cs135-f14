@@ -11,4 +11,6 @@ else ROS_DISTRO=indigo
 fi
 
 echo "ROS_DISTRO: $ROS_DISTRO"
-source /opt/ros/$ROS_DISTRO/setup.bash
+echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
+echo $ROS_PACKAGE_PATH
+exec bash
