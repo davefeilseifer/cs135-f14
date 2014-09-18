@@ -3,7 +3,6 @@ all: project_code
 .PHONY: project_code
 
 project_code:
-	. /opt/ros/indigo/setup.she
 	$(MAKE) -C $(CODE_DIR)
 
 clean:
