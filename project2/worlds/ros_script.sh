@@ -13,4 +13,5 @@ fi
 echo "ROS_DISTRO: $ROS_DISTRO"
 echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
 echo $ROS_PACKAGE_PATH
+source ~/.bashrc
 exec bash
