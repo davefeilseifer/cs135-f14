@@ -1,5 +1,5 @@
 CODE_DIR = wanderer
-
+all: project_code
 .PHONY: project_code
 
 project_code:
