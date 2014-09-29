@@ -1,13 +1,19 @@
-CFLAGS=-Wall 
+CFLAGS=-Wall -O9
 LDFLAGS=
-LDLIBS=-lcrypt
+LDLIBS=-lcrypt -lc
 
-OBJS=crack.o parse_dict.o
+all: crypt crack
+clean:
+	rm *.o
+	rm crypt
+	rm crack
+
+OBJS=crack.o parse_dict.o parse_passwd.o 
 
 %.o: %.cpp
 	g++ -g -c $(CFLAGS) $<
 
-crypt: crypt.o
+crypt: crypt.o 
 	g++ $(LDFLAGS) -o crypt crypt.o $(LDLIBS)
 
 crack: $(OBJS)
