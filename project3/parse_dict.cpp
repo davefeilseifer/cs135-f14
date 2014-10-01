@@ -16,7 +16,8 @@ void get_words( int &num_words, char** &words )
 		// increment word count;
 		word_count++;
 		// read in a string from a file (single word)
-		fscanf( dict_file, "%s", word );
+		int args = fscanf( dict_file, "%s", word );
+		args++;
 	}
 
 	// close and re-open the file (to move the read pointer to the beginning
@@ -34,8 +35,8 @@ void get_words( int &num_words, char** &words )
 		words[i] = new char[1024];
 
 		// read in a string from a file (single word)
-		fscanf( dict_file, "%s", words[i] );
-		//printf( "%s\n", words[i] );
+		int args = fscanf( dict_file, "%s", words[i] );
+		args++;
 
 		// increment i
 		i++;
