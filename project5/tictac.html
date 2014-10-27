@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="300" height="700"></canvas>
+    <script>
+
+	var canvas = document.getElementById('myCanvas');
+	var context = canvas.getContext('2d');
+
+	/*
+		writeMessage:
+
+			writes a message in black text to a spot below the tic-tac-toe board
+			note: clears out previous text		
+		
+		args:
+			canvas: which canvas to draw on (should always be: canvas)
+			message: a string which will be drawn in canvas
+	*/
+	function writeMessage(canvas, message) {
+
+        context.clearRect(0, 300, canvas.width, canvas.height);
+        context.font = '18pt Calibri';
+        context.fillStyle = 'black';
+        context.fillText(message, 10, 350);
+	}
+
+	/*
+		writeMessage:
+
+			writes a message in black text to a spot below the tic-tac-toe board
+			note: clears out previous text		
+		
+		args:
+			canvas: which canvas to draw on (should always be: canvas)
+			message: a string which will be drawn in canvas
+	*/
+	function writeError(canvas, message) {
+
+
+        context.font = '18pt Calibri';
+        context.fillStyle = 'red';
+        context.fillText(message, 10, 500);
+	}
+
+	/*
+		getMousePos:
+			returns the position of the mouse when it was clicked
+	*/
+	function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+			x: evt.clientX - rect.left,
+			y: evt.clientY - rect.top
+		};
+	}
+
+	/* 
+		addEventListener:
+			this function runs whenver someone clicks the mouse
+
+		the x-coordinate of the mouse click is stored in mousePos.x
+		the y-coordinate of the mouse click is stored in mousePos.y
+
+		a message describing where the mouse was clicked is painted on the canvas
+	*/
+	canvas.addEventListener('mousedown', function(evt) {
+		/******************************************/
+			// don't change this code
+    	var mousePos = getMousePos(canvas, evt);
+		var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
+		writeMessage(canvas, message);
+		/******************************************/
+
+		// write your code here
+
+	}, false);
+
+
+	/*
+		didSomeoneWin:
+			this function will check if the current state of the board represents
+			a win for either player
+
+		returns: true if the current state of the board has someone winning
+	*/
+	function didSomeoneWin()
+	{
+	}
+
+	/*
+		drawBoard:
+			draws a 300x300 tictactoe board on an already created canvas
+	*/
+	function drawBoard()
+	{
+	}
+
+	/*
+		drawX: draws an x in a square
+
+		args:
+			row: the row to draw the X
+			col: the column to draw the X
+	*/
+	function drawX(row,col)
+	{
+	}
+
+	/*
+		drawX: draws an O in a square
+
+		args:
+			row: the row to draw the O
+			col: the column to draw the O
+	*/
+	function drawO(row,col)
+	{
+	}
+
+    </script>
+  </body>
+</html>      
