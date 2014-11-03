@@ -10,12 +10,6 @@ void drawBoard(char bs[3][3])
 	printf( " %c | %c | %c \n", bs[2][0],bs[2][1],bs[2][2] );
 }
 
-bool isThereAWinner(char bs[3][3])
-{
-
-	return false;
-}
-
 int main()
 {
 	char boardState[3][3];
@@ -31,23 +25,12 @@ int main()
 	}
 
 	// make some test moves
-	//boardState[1][1] = 'x';	
-	//boardState[1][2] = 'o';
+	boardState[1][1] = 'x';	
+	boardState[1][2] = 'o';
 
 	// Dave was WRONG!!!!
 	//drawBoard((char**) boardState);
-	while( !isThereAWinner(boardState) )
-	{
-		drawBoard(boardState);
-		printf( "make your move (%c): ", whoseTurn );
-		int row, col;
-		scanf( "%d %d", &row, &col );
-		boardState[row][col] = whoseTurn;
-
-		if( whoseTurn == 'x' )
-			whoseTurn = 'o';
-		else
-			whoseTurn = 'x';
-	}
+	drawBoard(boardState);
+	
 	return 0;
 }
