@@ -6,7 +6,7 @@ all: count_balloons
 clean:
 	rm *.o
 
-OBJS=count_balloons.o 
+OBJS=count_balloons.o main.o
 
 %.o: %.cpp
 	g++ -g -c $(CFLAGS) $<
