@@ -1,8 +1,5 @@
-#include "count_balloons.h"
+#include "image_to_array.h"
 #include <stdio.h>
-
-
-
 
 ImageData image_to_array( const char* filename )
 {

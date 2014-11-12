@@ -2,14 +2,14 @@ CFLAGS=-Wall -O9
 LDFLAGS=
 LDLIBS= -lc -lopencv_core -lopencv_highgui
 
-all: count_balloons
+all: red_to_blue
 clean:
 	rm *.o
 
-OBJS=count_balloons.o main.o
+OBJS=image_to_array.o red_to_blue.o
 
 %.o: %.cpp
 	g++ -g -c $(CFLAGS) $<
 
-count_balloons: $(OBJS)
-	g++ $(LDFLAGS) -o count_balloons $(OBJS) $(LDLIBS)
+red_to_blue: $(OBJS)
+	g++ $(LDFLAGS) -o red_to_blue $(OBJS) $(LDLIBS)
