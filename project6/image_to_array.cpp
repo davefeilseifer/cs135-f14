@@ -43,7 +43,7 @@ ImageData image_to_array( const char* filename )
 	return ret;
 }
 
-cv::Mat array_to_image( ImageData data, char* display_name )
+cv::Mat array_to_image( ImageData data, const char* display_name )
 {
 	// initialize image
 	cv::Mat out_image(data.height,data.width, CV_8UC3, cv::Scalar(0,0,0));

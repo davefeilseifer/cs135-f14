@@ -22,5 +22,5 @@ struct ImageData {
 
 ImageData image_to_array( const char* filename );
 
-cv::Mat array_to_image( ImageData data, char* display_name );
+cv::Mat array_to_image( ImageData data, const char* display_name );
 
