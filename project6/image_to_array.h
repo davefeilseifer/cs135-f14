@@ -22,5 +22,19 @@ struct ImageData {
 
 ImageData image_to_array( const char* filename );
 
+/* array_to_image:
+	function to take an ImageData struct, convert that image to an OpenCV
+	image, and then open a window to display that image.
+
+arguments:
+	ImageData data: an array to turn into an openCV image (char***)
+	char* display_name: the name to give the window that is opened
+		(NULL if no window is desired)
+	
+returns:
+	struct cv::Mat: the openCV image represented by the array
+*/
+
+
 cv::Mat array_to_image( ImageData data, const char* display_name );
 
