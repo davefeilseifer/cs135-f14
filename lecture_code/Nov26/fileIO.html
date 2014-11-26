@@ -1,0 +1,35 @@
+<input type="file" id="fileinput"/>
+<script type="text/javascript">
+  function readSingleFile(evt) {
+    //Retrieve the first (and only!) File from the FileList object
+    var f = evt.target.files[0]; 
+
+    if (f) {
+      var r = new FileReader();
+      r.onload = function(e) { 
+        var contents = e.target.result;
+        alert( "Got the file.n" 
+              +"name: " + f.name + "n"
+              +"type: " + f.type + "n"
+              +"size: " + f.size + " bytesn"
+              + "starts with: " + contents.substr(1, contents.indexOf("n"))
+          );  
+        var topTen = contents.split ('\n');
+        console.log("Name\t score");
+
+        for(i = 0; i < topTen.length; i++){
+                 var nameScore = topTen[i].split(' ');
+                 var percent = parseInt(nameScore[1])/100.0;
+		 console.log(nameScore[0] + "\t " + percent.toString());
+        }
+
+      }
+      r.readAsText(f);
+
+    } else { 
+      alert("Failed to load file");
+    }
+  }
+
+  document.getElementById('fileinput').addEventListener('change', readSingleFile, false);
+</script>
