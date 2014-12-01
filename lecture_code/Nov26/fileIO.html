@@ -1,3 +1,9 @@
+
+
+<h1> Reading from a file </h1>
+<p>
+
+
 <input type="file" id="fileinput"/>
 <script type="text/javascript">
   function readSingleFile(evt) {
@@ -11,7 +17,7 @@
         alert( "Got the file.n" 
               +"name: " + f.name + "n"
               +"type: " + f.type + "n"
-              +"size: " + f.size + " bytesn"
+              +"size: " + f.size + " bytes"
               + "starts with: " + contents.substr(1, contents.indexOf("n"))
           );  
         var topTen = contents.split ('\n');
